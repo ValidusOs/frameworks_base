@@ -72,4 +72,9 @@
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_enableSmartPixels">false</bool>
 
+    <!-- EdgeGesture service --> 
+    <java-symbol type="dimen" name="edge_gesture_trigger_distance" /> 
+    <java-symbol type="dimen" name="edge_gesture_perpendicular_distance" /> 
+    <java-symbol type="dimen" name="edge_gesture_trigger_thickness" /> 
+
 </resources>
