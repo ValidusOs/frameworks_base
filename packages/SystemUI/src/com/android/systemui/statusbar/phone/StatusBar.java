@@ -1129,8 +1129,8 @@ public class StatusBar extends SystemUI implements DemoMode,
         // end old BaseStatusBar.start().
 
         mContext.getContentResolver().registerContentObserver(Settings.Secure.getUriFor(
-                Settings.Secure.EDGE_GESTURES_ENABLED), false,
-                mEdgeGesturesSettingsObserver);
+                    Settings.Secure.EDGE_GESTURES_ENABLED), false,
+                    mEdgeGesturesSettingsObserver);
 
         mMediaSessionManager
                 = (MediaSessionManager) mContext.getSystemService(Context.MEDIA_SESSION_SERVICE);
@@ -8551,6 +8551,19 @@ public class StatusBar extends SystemUI implements DemoMode,
         }
     };
 
+    public void updateEdgeGestures(boolean enabled) {
+        Log.d(TAG, "updateEdgeGestures: Updating edge gestures");
+        if (enabled) {
+            if (gesturesController == null) {
+                gesturesController = new ScreenGesturesController(mContext, mWindowManager, this);
+            }
+            gesturesController.reorient();
+        } else if (!enabled && gesturesController != null) {
+            gesturesController.stop();
+            gesturesController = null;
+        }
+    }
+
     @ChaosLab(name="GestureAnywhere", classification=Classification.NEW_METHOD)
     protected void addGestureAnywhereView() {
         mGestureAnywhereView = (GestureAnywhereView)View.inflate(
@@ -8583,16 +8596,5 @@ public class StatusBar extends SystemUI implements DemoMode,
         lp.setTitle("GestureAnywhereView");
 
         return lp;
-    public void updateEdgeGestures(boolean enabled) {
-        Log.d(TAG, "updateEdgeGestures: Updating edge gestures");
-        if (enabled) {
-            if (gesturesController == null) {
-                gesturesController = new ScreenGesturesController(mContext, mWindowManager, this);
-            }
-            gesturesController.reorient();
-        } else if (!enabled && gesturesController != null) {
-            gesturesController.stop();
-            gesturesController = null;
-        }
     }
 }

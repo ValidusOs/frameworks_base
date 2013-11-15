@@ -1538,8 +1538,6 @@ public final class SystemServer {
             mSystemServiceManager.startService(LauncherAppsService.class);
             traceEnd();
 
-            Slog.i(TAG, "Starting PocketService");
-            mSystemServiceManager.startService(PocketService.class);
             try {
                 Slog.i(TAG, "EdgeGesture service");
                 edgeGestureService = new EdgeGestureService(context, inputManager);
