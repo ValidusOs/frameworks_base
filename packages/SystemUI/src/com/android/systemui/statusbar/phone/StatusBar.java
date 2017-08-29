@@ -5252,6 +5252,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.PULSE_APPS_BLACKLIST),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5280,6 +5283,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                 setQsRowsColumns();
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.PULSE_APPS_BLACKLIST))) {
                 setPulseBlacklist();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.DOUBLE_TAP_SLEEP_GESTURE))) {
+                setLockscreenDoubleTapToSleep();
             }
         }
 
