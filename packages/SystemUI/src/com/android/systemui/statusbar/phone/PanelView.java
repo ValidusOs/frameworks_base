@@ -139,6 +139,9 @@ public abstract class PanelView extends FrameLayout {
     private boolean mIgnoreXTouchSlop;
     private boolean mExpandLatencyTracking;
 
+    // omni additions start
+    protected boolean mDoubleTapToSleepEnabled;
+
     protected void onExpandingFinished() {
         mBar.onExpandingFinished();
     }
