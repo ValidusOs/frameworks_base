@@ -107,4 +107,5 @@ interface IStatusBarService
      */
     void toggleCameraFlash();
     void leftInLandscapeChanged(boolean isLeft);
+    void setAutoRotate(boolean enabled);
 }
