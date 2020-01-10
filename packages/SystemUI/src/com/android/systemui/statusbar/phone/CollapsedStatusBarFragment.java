@@ -478,7 +478,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
                 break;
                 // Wolf Shield
             case 6:
-                logo = getContext().getResources().getDrawable(R.drawable.status_bar_logo);
+                logo = getContext().getResources().getDrawable(R.drawable.status_bar_wolf_shield_logo);
                 break;
                 // GZR Skull
             case 7:
