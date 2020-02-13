@@ -5270,7 +5270,6 @@ public final class Settings {
         private static final Validator OMNI_NOTIFICATION_PULSE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
-
          /**
          * Pulse Ambient lights color
          * @hide
@@ -5278,8 +5277,7 @@ public final class Settings {
         public static final String OMNI_NOTIFICATION_PULSE_COLOR = "ambient_notification_light_color";
 
         private static final Validator OMNI_NOTIFICATION_PULSE_COLOR_VALIDATOR =
-                ANY_INTEGER_VALIDATOR;;
-
+                ANY_INTEGER_VALIDATOR;
 
          /**
          * Whether to enable Ambient Edge lights
@@ -5317,6 +5315,14 @@ public final class Settings {
         public static final String OMNI_NOTIFICATION_PULSE_ACCENT = "ambient_notification_light_accent";
 
         private static final Validator OMNI_NOTIFICATION_PULSE_ACCENT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * @hide
+         */
+        public static final String OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC = "ambient_notification_light_color_automatic";
+
+        private static final Validator OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
         /**
@@ -5517,6 +5523,7 @@ public final class Settings {
             OMNI_PULSE_BRIGHTNESS,
             OMNI_DOZE_BRIGHTNESS,
             NAVIGATION_BAR_ARROW_KEYS,
+            OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC,
         };
 
         /**
@@ -5689,6 +5696,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(OMNI_DOZE_BRIGHTNESS);
             PRIVATE_SETTINGS.add(NAVIGATION_BAR_ARROW_KEYS);
             PRIVATE_SETTINGS.add(FORCE_SHOW_NAVBAR);
+            PRIVATE_SETTINGS.add(OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC);
         }
 
         /**
@@ -5849,6 +5857,8 @@ public final class Settings {
             VALIDATORS.put(NAVIGATION_BAR_ARROW_KEYS,
                     NAVIGATION_BAR_ARROW_KEYS_VALIDATOR);
             VALIDATORS.put(FORCE_SHOW_NAVBAR, FORCE_SHOW_NAVBAR_VALIDATOR);
+            VALIDATORS.put(OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC,
+                    OMNI_NOTIFICATION_PULSE_COLOR_AUTOMATIC_VALIDATOR);
         }
 
         /**
