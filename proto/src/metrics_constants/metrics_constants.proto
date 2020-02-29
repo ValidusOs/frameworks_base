@@ -7435,5 +7435,8 @@ message MetricsEvent {
 
     // VALIDUS constants
     VALIDUS = 4001;
+
+    // Panel for Bluetooth
+    PANEL_BLUETOOTH = 4002;
   }
 }
