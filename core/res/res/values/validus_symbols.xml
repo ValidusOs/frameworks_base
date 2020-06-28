@@ -47,4 +47,7 @@
   <java-symbol type="string" name="app_killed_message" />
   <java-symbol type="integer" name="config_backKillTimeout" />
 
+    <!-- Enable face auth when swiping security view -->
+    <java-symbol type="bool" name="config_faceAuthOnSecurityView" />
+
 </resources>
