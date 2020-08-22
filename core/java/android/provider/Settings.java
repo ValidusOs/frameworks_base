@@ -10452,6 +10452,7 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_FORMAT,
             LOCKSCREEN_VISUALIZER_ENABLED,
             HIDE_LOCKICON,
+            AWARE_TAP_PAUSE_TOUCH_COUNT
         };
 
         /**
